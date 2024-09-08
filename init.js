@@ -16,18 +16,18 @@ let allchats = [
   {
     from:"neha",
     to: "prity",
-    message:"how are you"
+    msg:"how are you"
 
   },
   {
     from:"me",
     to: "pestu",
-    message:"are you fine"
+    msg:"are you fine"
   },
   {
     from:"neha",
     to: "prity",
-    message:"what happend"
+    msg:"what happend"
   }
 ]
 
