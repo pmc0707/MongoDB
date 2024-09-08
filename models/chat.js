@@ -13,8 +13,10 @@ const chatScehema = new mongoose.Schema({
         maxLength : 50,
         require :true
     },
-    created_at :{
+    created_at :{   
         type :Date,
         require :true
     }
 })
+const Chat = mongoose.model("chat",chatScehema);
+module.exports = Chat;
