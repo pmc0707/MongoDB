@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Whatsapp</title>
+    <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
     <h2>All chats!</h2>
@@ -13,7 +14,8 @@
             <div class="msg">
                 <p><%= chat.msg %></p>
             </div>
-            <p>Recived by : <%= chat.to%></p>
+            <p>Recived by : <%= chat.to %></p>
+            <hr>
         </div>
     <%}%>
 </body>
