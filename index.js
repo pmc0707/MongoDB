@@ -17,20 +17,18 @@ async function main() {
 }
 
 //index route
-app.get("/chats", async(req,res)=> {
-    let chats = await Chat.find();
-    console.log(chats);
-    res.render("index.ejs",{chats});
+app.get("/newChats" , (req,res)=>{
+    let chat1 = new Chat({
+      from: 'neha',
+      to:"priya",
+      msg:" send me exam sheets",
+      created_at: new Date()
+  });
+  chat1.save().then((res) => {
+      console.log(res);
+  })
 })
-let chat1 = new Chat({
-    from: 'neha',
-    to:"priya",
-    msg:" send me exam sheets",
-    created_at: new Date()
-});
-chat1.save().then((res) => {
-    console.log(res);
-})
+
 app.get("/" ,(req,res) => {
     res.send("root working")
 })
