@@ -8,6 +8,10 @@
 </head>
 <body>
     <h2>All chats!</h2>
+    <form method="GET" action="/newChats/new">
+        <button>New Chat</button>
+    </form>
+    <br>
    <% for(let newChat of newChats ) { %>
         <div class="chat">
             <p>From : <%= newChat.from %></p>

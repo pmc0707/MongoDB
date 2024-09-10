@@ -24,6 +24,11 @@ app.get("/newChats",async (req,res) =>{
     res.render("index.ejs", {newChats})
 })
 
+//new route
+app.get("/newChats/new",(req,res)=>{
+    res.render("new.ejs")
+})
+
 app.get("/" ,(req,res) => {
     res.send("root working")
 })
