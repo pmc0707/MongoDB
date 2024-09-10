@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Whatsapp</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>All chats!</h2>
-   <% for(let chat of chats ) { %>
+   <% for(let newChat of newChats ) { %>
         <div class="chat">
-            <p>From : <%= chat.from %></p>
+            <p>From : <%= newChat.from %></p>
             <div class="msg">
-                <p><%= chat.msg %></p>
+                <p><%= newChat.msg %></p>
             </div>
-            <p>Recived by : <%= chat.to %></p>
+            <p>Recived by : <%= newChat.to %></p>
             <hr>
         </div>
+        <br>
+        <br>
     <%}%>
 </body>
 </html>

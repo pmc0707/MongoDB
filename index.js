@@ -7,8 +7,9 @@ const Chat = require("./models/chat.js");
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,"public")))
-main().then(() => {
-    console.log("connection succesful")
+main()
+    .then(() => {
+      console.log("connection succesful")
 })
 .catch((err) => console.log(err));
 
@@ -17,16 +18,10 @@ async function main() {
 }
 
 //index route
-app.get("/newChats" , (req,res)=>{
-    let chat1 = new Chat({
-      from: 'neha',
-      to:"priya",
-      msg:" send me exam sheets",
-      created_at: new Date()
-  });
-  chat1.save().then((res) => {
-      console.log(res);
-  })
+app.get("/newChats",async (req,res) =>{
+    let newChats = await Chat.find();
+    console.log(newChats);
+    res.render("index.ejs", {newChats})
 })
 
 app.get("/" ,(req,res) => {

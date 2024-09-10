@@ -14,7 +14,7 @@ async function main() {
 
 let allchats = [
   {
-    from:"neha",
+    from:"shreya",
     to: "prity",
     msg:"how are you"
 
