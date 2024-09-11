@@ -35,11 +35,17 @@ app.post("/newChats",(req,res) =>{
     let newChats2 = new Chat( {
         from: from,
         to: to,
-        msg:msg,
+        msg: msg,
         created_at: new Date()
     })
-    console.log(newChats2)
-    res.send("working")
+    newChats2.save()
+        .then((res)=>{
+            console.log("chat was saved")
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    res.redirect("/newChats");
 })
 
 app.get("/" ,(req,res) => {
