@@ -37,7 +37,6 @@ app.post("/newChats",(req,res) =>{
         to: to,
         msg:msg,
         created_at: new Date()
-
     })
     console.log(newChats2)
     res.send("working")
