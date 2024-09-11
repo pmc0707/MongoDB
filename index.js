@@ -7,6 +7,7 @@ const Chat = require("./models/chat.js");
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,"public")))
+app.use(express.urlencoded({extended: true}));
 main()
     .then(() => {
       console.log("connection succesful")
@@ -27,6 +28,19 @@ app.get("/newChats",async (req,res) =>{
 //new route
 app.get("/newChats/new",(req,res)=>{
     res.render("new.ejs")
+})
+//create route for add chat
+app.post("/newChats",(req,res) =>{
+    let { from , to ,msg} = req.body;
+    let newChats2 = new Chat( {
+        from: form,
+        to: to,
+        msg:msg,
+        created_at: new Date()
+
+    })
+    console.log(newChats2)
+    res.send("working")
 })
 
 app.get("/" ,(req,res) => {
