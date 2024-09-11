@@ -33,7 +33,7 @@ app.get("/newChats/new",(req,res)=>{
 app.post("/newChats",(req,res) =>{
     let { from , to ,msg} = req.body;
     let newChats2 = new Chat( {
-        from: form,
+        from: from,
         to: to,
         msg:msg,
         created_at: new Date()
